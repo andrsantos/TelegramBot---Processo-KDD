@@ -2,6 +2,7 @@ import logging
 import httpx
 import asyncio
 import unicodedata
+import os
 
 from aiogram import Bot, Dispatcher, Router, F, types
 from aiogram.enums import ParseMode
@@ -18,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 # --- CONSTANTES ---
 HF_API_URL = "https://andreyrsantos.app.n8n.cloud/webhook/b083795b-3671-4ec5-92d3-0e4952638003"
-TELEGRAM_TOKEN = "8405385966:AAHJzRc3B83pJ2ipLkYbv1eSTJhBRdx5LBw" # Seu Token
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # --- DICIONÁRIOS DE MAPEAMENTO PARA PADRONIZAÇÃO ---
 LINGUAGEM_MAP = {
